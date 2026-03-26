@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>ABUSER CLIENT</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
 body {
     margin: 0;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Share Tech Mono', monospace;
     background: url('back.gif') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
@@ -17,14 +17,15 @@ body {
     min-height: 100vh;
 }
 
+/* Header */
 header {
     width: 100%;
     padding: 20px 40px;
-    background: linear-gradient(90deg, #ff4c4c, #ff0000);
+    background: rgba(0,0,0,0.85);
     display: flex;
     align-items: center;
     gap: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(255,0,0,0.5);
 }
 
 header img {
@@ -34,12 +35,13 @@ header img {
 
 header h1 {
     margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 32px;
-    color: #fff;
-    letter-spacing: 1.5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+    color: #ff0000;
+    letter-spacing: 2px;
 }
 
+/* Main container */
 .container {
     width: 90%;
     max-width: 720px;
@@ -47,21 +49,21 @@ header h1 {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    position: relative;
 }
 
+/* MakeCode link box */
 .link-box {
     display: flex;
     align-items: center;
-    background: rgba(255, 0, 0, 0.2);
+    background: rgba(0,0,0,0.7);
     border: 2px solid #ff0000;
-    border-radius: 14px;
+    border-radius: 12px;
     padding: 14px;
     transition: all 0.25s ease;
 }
 
 .link-box:hover {
-    box-shadow: 0 0 20px rgba(255,0,0,0.5);
+    box-shadow: 0 0 20px rgba(255,0,0,0.6);
     transform: translateY(-2px);
 }
 
@@ -69,8 +71,8 @@ header h1 {
     flex: 1;
     border: none;
     background: transparent;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 16px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
     outline: none;
     color: #fff;
 }
@@ -83,48 +85,68 @@ header h1 {
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     transition: all 0.25s ease;
     margin-left: 15px;
 }
 
 .link-box button:hover {
-    background: #fff;
+    background: #000;
     color: #ff0000;
     box-shadow: 0 0 18px #ff0000;
 }
 
+/* Tutorial box */
 .tutorial {
     padding: 16px;
-    background: rgba(255, 215, 0, 0.2);
-    border-left: 4px solid #ffd700;
+    background: rgba(0,0,0,0.8);
+    border-left: 4px solid #ff0000;
     border-radius: 10px;
-    font-size: 16px;
-    color: #ffd700;
+    font-size: 14px;
+    color: #ff0000;
     text-align: center;
     font-weight: bold;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 15px rgba(255,0,0,0.4);
+    font-family: 'Press Start 2P', cursive;
 }
 
+/* Video */
 video {
     width: 100%;
     border: 2px solid #ff0000;
-    border-radius: 14px;
-    box-shadow: 0 0 18px rgba(255,0,0,0.4);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.5);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 video:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 30px rgba(255,0,0,0.5);
+    box-shadow: 0 0 35px rgba(255,0,0,0.6);
 }
 
+/* Footer */
 footer {
     margin-top: auto;
     padding: 25px;
     font-size: 12px;
     color: #ff0000;
     text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/* Responsive improvements */
+@media (max-width: 500px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    .link-box input {
+        font-size: 12px;
+    }
+
+    .tutorial {
+        font-size: 12px;
+    }
 }
 </style>
 </head>
