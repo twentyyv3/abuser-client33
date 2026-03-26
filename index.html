@@ -3,176 +3,162 @@
 <head>
 <meta charset="UTF-8">
 <title>ABUSER CLIENT</title>
-<!-- Pixel font -->
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 body {
     margin: 0;
-    font-family: 'Press Start 2P', cursive;
-    background: #000;
-    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    background: #fff;
+    color: #111;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
 }
 
-/* Header */
+/* Top bar */
 header {
     width: 100%;
-    padding: 60px 20px 40px;
-    text-align: center;
-    background: #100000;
-    border-bottom: 2px solid #ff0000;
+    padding: 20px 40px;
+    background: #ff0000;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-h1 {
+header img {
+    height: 50px;
+    width: 50px;
+}
+
+header h1 {
     margin: 0;
+    font-family: 'Orbitron', sans-serif;
     font-size: 32px;
-    color: #ff0000;
-    letter-spacing: 2px;
-    animation: glowText 2s ease-in-out infinite alternate;
+    color: #fff;
+    letter-spacing: 1.5px;
 }
 
-@keyframes glowText {
-    0% { text-shadow: 0 0 2px #ff0000; }
-    100% { text-shadow: 0 0 12px #ff0000; }
-}
-
-/* Container */
+/* Main container */
 .container {
-    margin-top: 50px;
+    width: 90%;
+    max-width: 720px;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    width: 90%;
-    max-width: 600px;
+    gap: 50px;
+    position: relative;
+}
+
+/* Decorative shapes */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: #ff0000;
+    border-radius: 20px;
+    opacity: 0.15;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 120px;
+    height: 120px;
+    background: #ff0000;
+    border-radius: 50%;
+    opacity: 0.12;
 }
 
 /* Link box */
 .link-box {
     display: flex;
     align-items: center;
-    background: #100000;
+    background: #f9f9f9;
     border: 2px solid #ff0000;
-    border-radius: 6px;
-    padding: 10px;
-    width: 100%;
-    transition: 0.3s;
+    border-radius: 12px;
+    padding: 14px;
+    transition: all 0.25s ease;
 }
 
 .link-box:hover {
-    box-shadow: 0 0 15px #ff0000;
-    transform: scale(1.02);
+    box-shadow: 0 0 18px rgba(255,0,0,0.3);
+    transform: translateY(-2px);
 }
 
 .link-box input {
     flex: 1;
-    background: transparent;
     border: none;
-    color: #fff;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 12px;
+    background: transparent;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
     outline: none;
-    animation: blinkCaret 1s step-start infinite;
+    color: #111;
 }
 
-@keyframes blinkCaret {
-    50% { border-right: 2px solid #ff0000; }
-}
-
-/* Copy button */
 .link-box button {
     background: #ff0000;
     border: none;
     color: #fff;
-    padding: 8px 15px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    font-family: 'Press Start 2P', cursive;
-    transition: 0.3s;
-    margin-left: 10px;
-    animation: pulseButton 2s infinite;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.25s ease;
+    margin-left: 15px;
 }
 
 .link-box button:hover {
     background: #fff;
     color: #ff0000;
-    box-shadow: 0 0 10px #ff0000;
-}
-
-@keyframes pulseButton {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-/* Video iframe */
-iframe {
-    width: 100%;
-    height: 300px;
-    border: 2px solid #ff0000;
-    border-radius: 6px;
-    margin-top: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-iframe:hover {
-    transform: scale(1.02);
     box-shadow: 0 0 15px #ff0000;
+}
+
+/* Video */
+video {
+    width: 100%;
+    border: 2px solid #ff0000;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(255,0,0,0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(255,0,0,0.35);
 }
 
 /* Footer */
 footer {
     margin-top: auto;
-    padding: 20px;
-    font-size: 10px;
-    color: #ff4444;
+    padding: 25px;
+    font-size: 12px;
+    color: #ff0000;
     text-align: center;
-}
-
-/* Subtle background animation */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: repeating-linear-gradient(
-        45deg,
-        rgba(255,0,0,0.03) 0px,
-        rgba(255,0,0,0.03) 1px,
-        transparent 1px,
-        transparent 3px
-    );
-    pointer-events: none;
-    animation: moveBG 15s linear infinite;
-}
-
-@keyframes moveBG {
-    0% {background-position: 0 0;}
-    100% {background-position: 100px 100px;}
 }
 </style>
 </head>
 <body>
 
 <header>
+    <img src="tntlogo.webp" alt="Logo">
     <h1>ABUSER CLIENT</h1>
 </header>
 
 <div class="container">
-
-    <!-- Copy Link -->
     <div class="link-box">
         <input type="text" id="codeBox" value="https://makecode.com/_Xdi51K0eLfuE" readonly>
         <button onclick="copyLink()">COPY</button>
     </div>
 
-    <!-- Video Section -->
-    <iframe src=""></iframe>
-
+    <video src="tutorial.mp4" controls></video>
 </div>
 
 <footer>
@@ -185,7 +171,7 @@ function copyLink() {
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
-    alert("Link copied!");
+    alert("MakeCode link copied!");
 }
 </script>
 
