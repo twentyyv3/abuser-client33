@@ -8,23 +8,23 @@
 body {
     margin: 0;
     font-family: 'Roboto Mono', monospace;
-    background: #fff;
-    color: #111;
+    background: url('back.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
 }
 
-/* Top bar */
 header {
     width: 100%;
     padding: 20px 40px;
-    background: #ff0000;
+    background: linear-gradient(90deg, #ff4c4c, #ff0000);
     display: flex;
     align-items: center;
     gap: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 header img {
@@ -40,55 +40,28 @@ header h1 {
     letter-spacing: 1.5px;
 }
 
-/* Main container */
 .container {
     width: 90%;
     max-width: 720px;
     margin-top: 60px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 25px;
     position: relative;
 }
 
-/* Decorative shapes */
-.container::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 100px;
-    height: 100px;
-    background: #ff0000;
-    border-radius: 20px;
-    opacity: 0.15;
-}
-
-.container::after {
-    content: '';
-    position: absolute;
-    bottom: -60px;
-    right: -60px;
-    width: 120px;
-    height: 120px;
-    background: #ff0000;
-    border-radius: 50%;
-    opacity: 0.12;
-}
-
-/* Link box */
 .link-box {
     display: flex;
     align-items: center;
-    background: #f9f9f9;
+    background: rgba(255, 0, 0, 0.2);
     border: 2px solid #ff0000;
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 14px;
     transition: all 0.25s ease;
 }
 
 .link-box:hover {
-    box-shadow: 0 0 18px rgba(255,0,0,0.3);
+    box-shadow: 0 0 20px rgba(255,0,0,0.5);
     transform: translateY(-2px);
 }
 
@@ -99,7 +72,7 @@ header h1 {
     font-family: 'Roboto Mono', monospace;
     font-size: 16px;
     outline: none;
-    color: #111;
+    color: #fff;
 }
 
 .link-box button {
@@ -107,7 +80,7 @@ header h1 {
     border: none;
     color: #fff;
     padding: 10px 20px;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     font-family: 'Orbitron', sans-serif;
@@ -118,24 +91,34 @@ header h1 {
 .link-box button:hover {
     background: #fff;
     color: #ff0000;
-    box-shadow: 0 0 15px #ff0000;
+    box-shadow: 0 0 18px #ff0000;
 }
 
-/* Video */
+.tutorial {
+    padding: 16px;
+    background: rgba(255, 215, 0, 0.2);
+    border-left: 4px solid #ffd700;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #ffd700;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
 video {
     width: 100%;
     border: 2px solid #ff0000;
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(255,0,0,0.3);
+    border-radius: 14px;
+    box-shadow: 0 0 18px rgba(255,0,0,0.4);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 video:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 25px rgba(255,0,0,0.35);
+    box-shadow: 0 0 30px rgba(255,0,0,0.5);
 }
 
-/* Footer */
 footer {
     margin-top: auto;
     padding: 25px;
@@ -153,12 +136,16 @@ footer {
 </header>
 
 <div class="container">
+
     <div class="link-box">
         <input type="text" id="codeBox" value="https://makecode.com/_Xdi51K0eLfuE" readonly>
         <button onclick="copyLink()">COPY</button>
     </div>
 
+    <div class="tutorial">Press C in a world</div>
+
     <video src="tutorial.mp4" controls></video>
+
 </div>
 
 <footer>
@@ -173,6 +160,12 @@ function copyLink() {
     document.execCommand("copy");
     alert("MakeCode link copied!");
 }
+
+document.addEventListener('keydown', function(event) {
+    if(event.key.toLowerCase() === 'c') {
+        alert("You pressed C in a world!");
+    }
+});
 </script>
 
 </body>
