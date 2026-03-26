@@ -1,2 +1,2 @@
-# abuser-client33
-an client that requires op for minecraft education
+# ABUSER CLIENT V2
+ill put a tutorial on the page.
